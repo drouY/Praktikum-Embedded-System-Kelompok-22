@@ -4,7 +4,7 @@ Repositori ini berisi laporan dan file pendukung praktikum Embedded System yang 
 
 ## Anggota Kelompok
 
-| No | Nama | NIM |
+| No | Nama | NRP |
 |----|------|-----|
 | 1  | Jordi | 5024241029 |
 | 2  | Danendra Nusi Putra Rahanda  | 5024241052 |
@@ -12,13 +12,13 @@ Repositori ini berisi laporan dan file pendukung praktikum Embedded System yang 
 
 ## Daftar Modul
 
-| Modul | Topik | Status |
+| Modul | Topik | LS | LA |
 |-------|-------|--------|
-| Modul 1 | Pengantar Mikrokontroler | Selesai |
-| Modul 2 | Sensor dan Akttuator Motor | Belum |
-| Modul 3 | Komunikasi Serial dan Interfacing | Belum |
-| Modul 4 | Interrupt, Timer, Watchdog, dam Multitasking | Belum |
-| Modul 5 | Pemrosesan Data dan Dasar Sistem Kontrol | Belum |
+| Modul 1 | Pengantar Mikrokontroler | Selesai | Belum |
+| Modul 2 | Sensor dan Akttuator Motor | Belum | Belum |
+| Modul 3 | Komunikasi Serial dan Interfacing | Belum | Belum |
+| Modul 4 | Interrupt, Timer, Watchdog, dam Multitasking | Belum | Belum |
+| Modul 5 | Pemrosesan Data dan Dasar Sistem Kontrol | Belum | Belum |
 
 ## Tools yang Digunakan
 
