@@ -27,13 +27,14 @@ def find_module_dir(n: int) -> Path | None:
 
 
 def status(module_dir: Path | None, kind: str) -> str:
-    if module_dir is None:
-        return NOT_DONE
-    files = [
-        p for p in module_dir.rglob("*.pdf")
-        if p.is_file() and p.name.upper().startswith(f"{kind}_")
-    ]
-    return DONE if len(files) >= MIN_FILES else NOT_DONE
+    count = 0
+    if module_dir is not None:
+        count = sum(
+            1 for p in module_dir.rglob("*.pdf")
+            if p.is_file() and p.name.upper().startswith(f"{kind}_")
+        )
+    label = DONE if count >= MIN_FILES else NOT_DONE
+    return f"{label}({min(count, MIN_FILES)}/{MIN_FILES})"
 
 
 def build_table() -> str:
