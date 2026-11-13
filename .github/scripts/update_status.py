@@ -2,7 +2,7 @@
 from pathlib import Path
 
 # ---- Pengaturan (sesuaikan dengan struktur repo) ----
-MIN_FILES = 4                          # jumlah file minimum agar status menjadi "Selesai"
+MIN_FILES = 3                          # jumlah file minimum agar status menjadi "Selesai"
 FOLDER_PATTERN = "modul{n}/{kind}"     # mis. modul1/LS dan modul1/LA
 DONE, NOT_DONE = "Selesai", "Belum"
 
