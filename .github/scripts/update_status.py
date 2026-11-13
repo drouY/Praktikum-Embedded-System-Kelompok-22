@@ -1,9 +1,8 @@
 """Membaca folder modul di repo dan memperbarui tabel status di README.md."""
+import re
 from pathlib import Path
 
-# ---- Pengaturan (sesuaikan dengan struktur repo) ----
-MIN_FILES = 3                          # jumlah file minimum agar status menjadi "Selesai"
-FOLDER_PATTERN = "modul{n}/{kind}"     # mis. modul1/LS dan modul1/LA
+MIN_FILES = 3
 DONE, NOT_DONE = "Selesai", "Belum"
 
 MODULES = [
@@ -18,10 +17,22 @@ START, END = "<!-- STATUS:START -->", "<!-- STATUS:END -->"
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def status(folder: Path) -> str:
-    if not folder.is_dir():
+def find_module_dir(n: int) -> Path | None:
+    """Cari folder 'Modul_1', 'Modul _1', 'modul1', dst. (tidak peduli huruf/spasi/underscore)."""
+    pattern = re.compile(rf"^modul[\s_]*{n}$", re.IGNORECASE)
+    for p in ROOT.iterdir():
+        if p.is_dir() and pattern.match(p.name):
+            return p
+    return None
+
+
+def status(module_dir: Path | None, kind: str) -> str:
+    if module_dir is None:
         return NOT_DONE
-    files = [p for p in folder.rglob("*") if p.is_file() and p.name != ".gitkeep"]
+    files = [
+        p for p in module_dir.rglob("*.pdf")
+        if p.is_file() and p.name.upper().startswith(f"{kind}_")
+    ]
     return DONE if len(files) >= MIN_FILES else NOT_DONE
 
 
@@ -31,9 +42,8 @@ def build_table() -> str:
         "|-------|-------|--------|-------|",
     ]
     for n, topik in MODULES:
-        ls = status(ROOT / FOLDER_PATTERN.format(n=n, kind="LS"))
-        la = status(ROOT / FOLDER_PATTERN.format(n=n, kind="LA"))
-        rows.append(f"| Modul {n} | {topik} | {ls} | {la} |")
+        d = find_module_dir(n)
+        rows.append(f"| Modul {n} | {topik} | {status(d, 'LS')} | {status(d, 'LA')} |")
     return "\n".join(rows)
 
 
