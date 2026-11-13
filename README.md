@@ -1,6 +1,6 @@
 # Praktikum Embedded System - Kelompok 22
 
-Repositori ini berisi laporan dan file pendukung praktikum Embedded System yang dikerjakan oleh Kelompok 22.
+Repositori ini berisi laporan dan file pendukung praktikum Embedded System Kelompok 22
 
 ## Anggota Kelompok
 
