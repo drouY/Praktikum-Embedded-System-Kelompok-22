@@ -17,7 +17,7 @@ Repositori ini berisi laporan dan file pendukung praktikum Embedded System Kelom
 |-------|-------|--------|-------|
 | Modul 1 | Pengantar Mikrokontroler | Selesai(3/3) | Selesai(3/3) |
 | Modul 2 | Sensor dan Aktuator Motor | Selesai(3/3) | Belum(1/3) |
-| Modul 3 | Komunikasi Serial dan Interfacing | Belum(1/3) | Belum(0/3) |
+| Modul 3 | Komunikasi Serial dan Interfacing | Belum(0/3) | Belum(0/3) |
 | Modul 4 | Interrupt, Timer, Watchdog, dan Multitasking | Belum(0/3) | Belum(0/3) |
 | Modul 5 | Pemrosesan Data dan Dasar Sistem Kontrol | Belum(0/3) | Belum(0/3) |
 <!-- STATUS:END -->
